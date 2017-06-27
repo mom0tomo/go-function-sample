@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 
 func powerCharge(wat float64, h float64) {
@@ -8,7 +11,7 @@ func powerCharge(wat float64, h float64) {
 	var rt float64 = 25
 	
 	kw := wat / 1000
-	c := kw * h * rt
+	c := math.Floor(kw * h * rt)
 	
 	fmt.Println("e charge: ", c, "en")
 	return
