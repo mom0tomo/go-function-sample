@@ -5,11 +5,9 @@ import (
 	"math"
 )
 
+// Goでは引数にデフォルト値は与えられない！！
+func powerCharge(wat float64, h float64, rt float64) {
 
-func powerCharge(wat float64, h float64) {
-
-	var rt float64 = 25
-	
 	kw := wat / 1000
 	c := math.Floor(kw * h * rt)
 	
@@ -19,9 +17,11 @@ func powerCharge(wat float64, h float64) {
 
 func main() {
 
-	// 蛍光灯
-	powerCharge(60, 24)
+	// 蛍光灯(北海道電力)
+	powerCharge(60, 24, 25)
+	// 蛍光灯(北陸電力)
+	powerCharge(60, 24, 20)
 
 	// ドライヤー
-	powerCharge(1200, 5)
+	powerCharge(1200, 5, 25)
 }
